@@ -4,13 +4,27 @@ Android Tooltip
 Create Toast like tooltips, physical targets can be specified, or even points on screen.
 Many additional features and customizations. Just look at the samples Activities.
 
-[![Build Status](https://travis-ci.org/sephiroth74/android-target-tooltip.svg?branch=master)](https://travis-ci.org/sephiroth74/android-target-tooltip)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/it.sephiroth.android.library.targettooltip/target-tooltip-library/badge.svg)](https://maven-badges.herokuapp.com/maven-central/it.sephiroth.android.library.targettooltip/target-tooltip-library)
+[![](https://jitpack.io/v/anoop44/android-target-tooltip.svg)](https://jitpack.io/#anoop44/android-target-tooltip)
 
 Installation
 ===
 
-	compile 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
+Add the following line in your top level build.gradle
+
+    maven { url 'https://jitpack.io' }
+
+Sample
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+Add the following dependency in your module(app)'s build.gradle
+
+	compile 'com.github.anoop44:android-target-tooltip:2.0.1'
 
 
 Usage
