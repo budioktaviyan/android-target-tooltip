@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Tooltip</string>
+    <string name="hello">Hello!</string>
+    <string name="sample_screen_1">Tooltip Sample 1</string>
+    <string name="sample_screen_2">Tooltip Sample 2</string>
 </resources>
