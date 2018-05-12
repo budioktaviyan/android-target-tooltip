@@ -17,9 +17,10 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 
 class TooltipTextDrawable extends Drawable {
-    public static final float ARROW_RATIO_DEFAULT = 1.4f;
-    public static final float ALPHA_MAX = 255f;
+
     static final String TAG = "TooltipTextDrawable";
+    public static final float ALPHA_MAX = 255f;
+    private static final float ARROW_RATIO_DEFAULT = 1.4f;
     private final RectF rectF;
     private final Path path;
     private final Point tmpPoint = new Point();
@@ -34,9 +35,7 @@ class TooltipTextDrawable extends Drawable {
     private Tooltip.Gravity gravity;
 
     public TooltipTextDrawable(final Context context, final Tooltip.Builder builder) {
-
-        TypedArray theme =
-            context.getTheme().obtainStyledAttributes(null, R.styleable.TooltipLayout, builder.defStyleAttr, builder.defStyleRes);
+        TypedArray theme = context.getTheme().obtainStyledAttributes(null, R.styleable.TooltipLayout, builder.defStyleAttr, builder.defStyleRes);
         this.ellipseSize = theme.getDimensionPixelSize(R.styleable.TooltipLayout_ttlm_cornerRadius, 4);
         final int strokeWidth = theme.getDimensionPixelSize(R.styleable.TooltipLayout_ttlm_strokeWeight, 2);
         final int backgroundColor = theme.getColor(R.styleable.TooltipLayout_ttlm_backgroundColor, 0);
@@ -254,6 +253,5 @@ class TooltipTextDrawable extends Drawable {
         if (getAlpha() < 255) {
             outline.setAlpha(0);
         }
-        //outline.setAlpha(getAlpha() / ALPHA_MAX);
     }
 }

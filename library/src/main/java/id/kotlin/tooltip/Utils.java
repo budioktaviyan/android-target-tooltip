@@ -12,11 +12,9 @@ import static android.util.Log.INFO;
 import static android.util.Log.VERBOSE;
 import static id.kotlin.tooltip.Tooltip.dbg;
 
-/**
- * Created by alessandro crugnola on 12/12/15.
- */
 final class Utils {
-    private Utils() { }
+
+    private Utils() {}
 
     @Nullable
     static Activity getActivity(@Nullable Context cont) {
@@ -58,6 +56,6 @@ final class Utils {
     }
 
     static boolean rectContainsRectWithTolerance(@NonNull final Rect parentRect, @NonNull final Rect childRect, final int t) {
-        return parentRect.contains(childRect.left + t, childRect.top + t, childRect.right - t, childRect.bottom - t);
+        return !parentRect.contains(childRect.left + t, childRect.top + t, childRect.right - t, childRect.bottom - t);
     }
 }

@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.support.v7.widget.AppCompatImageView;
 
 public class TooltipOverlay extends AppCompatImageView {
+
     private int mMargins;
 
     public TooltipOverlay(Context context) {
@@ -25,11 +26,9 @@ public class TooltipOverlay extends AppCompatImageView {
         TooltipOverlayDrawable drawable = new TooltipOverlayDrawable(context, defStyleResId);
         setImageDrawable(drawable);
 
-        final TypedArray array =
-            context.getTheme().obtainStyledAttributes(defStyleResId, R.styleable.TooltipOverlay);
+        final TypedArray array = context.getTheme().obtainStyledAttributes(defStyleResId, R.styleable.TooltipOverlay);
         mMargins = array.getDimensionPixelSize(R.styleable.TooltipOverlay_android_layout_margin, 0);
         array.recycle();
-
     }
 
     public TooltipOverlay(Context context, AttributeSet attrs, int defStyleAttr, int defStyleResId) {

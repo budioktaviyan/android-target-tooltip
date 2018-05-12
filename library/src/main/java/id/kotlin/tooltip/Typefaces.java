@@ -7,10 +7,11 @@ import android.util.Log;
 import java.util.Hashtable;
 
 public final class Typefaces {
+
     private static final String TAG = "Typefaces";
     private static final Hashtable<String, Typeface> FONT_CACHE = new Hashtable<>();
 
-    private Typefaces() { }
+    private Typefaces() {}
 
     public static Typeface get(Context c, String assetPath) {
         synchronized (FONT_CACHE) {
@@ -23,6 +24,7 @@ public final class Typefaces {
                     return null;
                 }
             }
+
             return FONT_CACHE.get(assetPath);
         }
     }

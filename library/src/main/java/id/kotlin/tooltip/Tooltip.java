@@ -52,16 +52,11 @@ import static id.kotlin.tooltip.Tooltip.Gravity.RIGHT;
 import static id.kotlin.tooltip.Tooltip.Gravity.TOP;
 import static id.kotlin.tooltip.Utils.log;
 
-/**
- * Created by Alessandro Crugnola on 12/12/15.
- * alessandro.crugnola@gmail.com
- */
 public final class Tooltip {
+
     public static boolean dbg = false;
 
-    private Tooltip() {
-        // empty
-    }
+    private Tooltip() {}
 
     @SuppressWarnings ("unused")
     public static TooltipView make(Context context, Builder builder) {
@@ -85,6 +80,7 @@ public final class Tooltip {
                 }
             }
         }
+
         return false;
     }
 
@@ -1057,7 +1053,7 @@ public final class Tooltip {
                 mViewRect.centerY() + height / 2
             );
 
-            if (checkEdges && !Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
+            if (checkEdges && Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
                 if (mDrawRect.bottom > mScreenRect.bottom) {
                     mDrawRect.offset(0, mScreenRect.bottom - mDrawRect.bottom);
                 } else if (mDrawRect.top < screenTop) {
@@ -1085,7 +1081,7 @@ public final class Tooltip {
                 mDrawRect.offset(-(overlayWidth - (mViewRect.width() / 2)), 0);
             }
 
-            if (checkEdges && !Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
+            if (checkEdges && Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
                 if (mDrawRect.bottom > mScreenRect.bottom) {
                     mDrawRect.offset(0, mScreenRect.bottom - mDrawRect.bottom);
                 } else if (mDrawRect.top < screenTop) {
@@ -1115,7 +1111,7 @@ public final class Tooltip {
                 mDrawRect.offset(overlayWidth - mViewRect.width() / 2, 0);
             }
 
-            if (checkEdges && !Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
+            if (checkEdges && Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
                 if (mDrawRect.bottom > mScreenRect.bottom) {
                     mDrawRect.offset(0, mScreenRect.bottom - mDrawRect.bottom);
                 } else if (mDrawRect.top < screenTop) {
@@ -1145,7 +1141,7 @@ public final class Tooltip {
                 mDrawRect.offset(0, -(overlayHeight - (mViewRect.height() / 2)));
             }
 
-            if (checkEdges && !Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
+            if (checkEdges && Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
                 if (mDrawRect.right > mScreenRect.right) {
                     mDrawRect.offset(mScreenRect.right - mDrawRect.right, 0);
                 } else if (mDrawRect.left < mScreenRect.left) {
@@ -1175,7 +1171,7 @@ public final class Tooltip {
                 mDrawRect.offset(0, overlayHeight - mViewRect.height() / 2);
             }
 
-            if (checkEdges && !Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
+            if (checkEdges && Utils.rectContainsRectWithTolerance(mScreenRect, mDrawRect, mSizeTolerance)) {
                 if (mDrawRect.right > mScreenRect.right) {
                     mDrawRect.offset(mScreenRect.right - mDrawRect.right, 0);
                 } else if (mDrawRect.left < mScreenRect.left) {
@@ -1459,7 +1455,7 @@ public final class Tooltip {
         View view;
         Gravity gravity;
         int actionbarSize = 0;
-        int textResId = R.layout.tooltip_textview;
+        int textResId = R.layout.layout_tooltip;
         int closePolicy = ClosePolicy.NONE;
         long showDuration;
         Point point;

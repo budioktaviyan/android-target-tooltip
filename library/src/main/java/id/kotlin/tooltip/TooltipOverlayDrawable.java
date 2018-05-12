@@ -15,16 +15,13 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-/**
- * Created by alessandro on 12/12/15.
- */
 public class TooltipOverlayDrawable extends Drawable {
-    @SuppressWarnings ("unused")
+
     public static final String TAG = TooltipOverlay.class.getSimpleName();
-    public static final float ALPHA_MAX = 255f;
-    public static final double FADEOUT_START_DELAY = 0.55;
-    public static final double FADEIN_DURATION = 0.3;
-    public static final double SECOND_ANIM_START_DELAY = 0.25;
+    private static final float ALPHA_MAX = 255f;
+    private static final double FADEOUT_START_DELAY = 0.55;
+    private static final double FADEIN_DURATION = 0.3;
+    private static final double SECOND_ANIM_START_DELAY = 0.25;
     private Paint mOuterPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint mInnerPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private float mOuterRadius;
@@ -35,8 +32,6 @@ public class TooltipOverlayDrawable extends Drawable {
     private ValueAnimator mSecondAnimator;
     private int mRepeatIndex;
     private boolean mStarted;
-    private int mOuterAlpha;
-    private int mInnerAlpha;
     private int mRepeatCount = 1;
     private long mDuration = 400;
 
@@ -70,8 +65,8 @@ public class TooltipOverlayDrawable extends Drawable {
 
         array.recycle();
 
-        mOuterAlpha = getOuterAlpha();
-        mInnerAlpha = getInnerAlpha();
+        final int mOuterAlpha = getOuterAlpha();
+        final int mInnerAlpha = getInnerAlpha();
 
         // first
         Animator fadeIn = ObjectAnimator.ofInt(this, "outerAlpha", 0, mOuterAlpha);
