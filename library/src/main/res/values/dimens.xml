@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<dimen name="ttlm_default_padding">20dip</dimen>
 	<dimen name="ttlm_default_corner_radius">4dip</dimen>

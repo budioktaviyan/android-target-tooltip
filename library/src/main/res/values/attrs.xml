@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- default style for theme -->
     <attr name="ttlm_defaultStyle" format="reference" />
-
-    <!-- default style -->
     <declare-styleable name="TooltipLayout">
         <attr name="ttlm_padding" format="dimension" />
         <attr name="ttlm_strokeColor" format="color" />
@@ -15,11 +11,8 @@
         <attr name="android:gravity" />
         <attr name="ttlm_overlayStyle" format="reference" />
         <attr name="ttlm_font" format="string" />
-
-        <!-- elevation of the tooltip. Works only on non custom views -->
         <attr name="ttlm_elevation" format="dimension" />
     </declare-styleable>
-
     <declare-styleable name="TooltipOverlay">
         <attr name="android:color" />
         <attr name="android:alpha" />

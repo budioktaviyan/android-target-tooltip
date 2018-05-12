@@ -1,12 +1,13 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
 
     defaultConfig {
+        applicationId "id.kotlin.tooltip.sample"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 100
@@ -21,16 +22,10 @@ android {
 }
 
 dependencies {
+    implementation project(':library')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
-}
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-artifacts {
-    archives sourcesJar
+    implementation 'com.android.support:design:27.1.1'
 }
