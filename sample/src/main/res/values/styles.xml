@@ -7,17 +7,14 @@
     <style name="AppTheme.Tooltip">
         <item name="android:textAppearance">?android:attr/textAppearanceSmallInverse</item>
         <item name="android:gravity">center</item>
-    </style>
-    <style name="TooltipCustom">
-        <item name="ttlm_padding">25dip</item>
+        <item name="ttlm_padding">25dp</item>
         <item name="ttlm_strokeColor">#ffe5a000</item>
         <item name="ttlm_backgroundColor">#ffe5c700</item>
-        <item name="ttlm_strokeWeight">2dip</item>
-        <item name="ttlm_cornerRadius">8dip</item>
-        <item name="ttlm_overlayStyle">@style/TooltipCustom.Overlay</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceInverse</item>
+        <item name="ttlm_strokeWeight">2dp</item>
+        <item name="ttlm_cornerRadius">8dp</item>
+        <item name="ttlm_overlayStyle">@style/TooltipOverlay</item>
     </style>
-    <style name="TooltipCustom.Overlay">
+    <style name="TooltipOverlay">
         <item name="android:color">#66ff0000</item>
         <item name="ttlm_repeatCount">999</item>
         <item name="ttlm_duration">400</item>

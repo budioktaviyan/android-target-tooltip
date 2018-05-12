@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Tooltip</string>
-    <string name="hello">Hello!</string>
-    <string name="sample_screen_1">Tooltip Sample 1</string>
-    <string name="sample_screen_2">Tooltip Sample 2</string>
+    <string name="sample_screen_1">Sample 1</string>
+    <string name="sample_screen_2">Sample 2</string>
+    <string name="text_description">Tooltips can have LEFT, TOP, RIGHT, BOTTOM or CENTER gravity. They can have a physical target or just a custom Point on the screen. They can also have floating horizontal or vertical animations</string>
+    <string name="text_policy">Change the tooltip close policy</string>
+    <string name="touch_inside">Touch Inside</string>
+    <string name="consume_inside">Consume Inside</string>
+    <string name="touch_outside">Touch Outside</string>
+    <string name="consume_outside">Consume Outside</string>
+    <string name="right_custom_font">(RIGHT) Custom Font</string>
+    <string name="bottom_touch_outside_exclusive">(BOTTOM) Touch Outside Exclusive</string>
+    <string name="top_inside">(TOP) Inside</string>
+    <string name="top_inside_exclusive">(TOP) Inside Exclusive</string>
+    <string name="left_none_arrow">(LEFT) None, no arrow</string>
 </resources>
