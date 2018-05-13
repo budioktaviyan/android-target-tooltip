@@ -11,7 +11,7 @@ private val FONT_CACHE = Hashtable<String, Typeface>()
 
 internal fun get(ctx: Context, assetPath: String): Typeface? {
     return synchronized(FONT_CACHE) {
-        if (!FONT_CACHE.containsKey(assetPath)) {
+        !FONT_CACHE.containsKey(assetPath).apply {
             try {
                 val typeface = Typeface.createFromAsset(ctx.assets, assetPath)
                 FONT_CACHE[assetPath] = typeface
@@ -20,7 +20,6 @@ internal fun get(ctx: Context, assetPath: String): Typeface? {
                 return null
             }
         }
-
         FONT_CACHE[assetPath]
     }
 }

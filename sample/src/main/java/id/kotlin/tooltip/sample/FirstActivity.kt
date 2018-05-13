@@ -132,6 +132,7 @@ class FirstActivity : AppCompatActivity(), OnPageChangeListener {
                    .anchor(view, Tooltip.Gravity.RIGHT)
                    .closePolicy(closePolicy, 5000)
                    .text("RIGHT. Touch outside to close this tooltip. RIGHT. Touch outside to close this tooltip. RIGHT. Touch outside to close this tooltip.")
+                   .withStyleId(R.style.ToolTipCustomFont)
                    .fitToScreen(true)
                    .activateDelay(2000)
                    .maxWidth(metrics.widthPixels / 2)

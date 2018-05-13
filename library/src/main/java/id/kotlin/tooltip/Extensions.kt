@@ -15,7 +15,7 @@ internal fun getActivity(ctx: Context?): Activity? = when (ctx) {
 }
 
 internal fun log(tag: String, level: Int, format: String, vararg args: Any) {
-    if (Tooltip.dbg) {
+    Tooltip.dbg.run {
         when (level) {
             Log.DEBUG -> Log.d(tag, String.format(format, *args))
             Log.ERROR -> Log.e(tag, String.format(format, *args))
@@ -27,7 +27,7 @@ internal fun log(tag: String, level: Int, format: String, vararg args: Any) {
     }
 }
 
-internal fun equals(first: Any?, second: Any?): Boolean = if (first == null) second == null else first == second
+internal fun equals(first: Any?, second: Any?): Boolean = if (null == first) second == null else first == second
 
 internal fun rectContainsRectWithTolerance(parentRect: Rect, childRect: Rect, type: Int): Boolean = !parentRect.contains(
         childRect.left + type, childRect.top + type, childRect.right - type, childRect.bottom - type
