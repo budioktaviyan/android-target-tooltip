@@ -785,7 +785,7 @@ public final class Tooltip {
             mView = LayoutInflater.from(getContext()).inflate(mTextResId, this, false);
             mView.setLayoutParams(params);
 
-            mTextView = (TextView) mView.findViewById(android.R.id.text1);
+            mTextView = (TextView) mView.findViewById(R.id.tooltip);
             mTextView.setText(Html.fromHtml((String) this.mText));
             if (mMaxWidth > -1) {
                 mTextView.setMaxWidth(mMaxWidth);
