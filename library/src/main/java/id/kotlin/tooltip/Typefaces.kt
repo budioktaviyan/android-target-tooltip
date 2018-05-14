@@ -9,17 +9,14 @@ import java.util.Hashtable
 private const val TAG = "Typefaces"
 private val FONT_CACHE = Hashtable<String, Typeface>()
 
-internal fun get(ctx: Context, assetPath: String): Typeface? {
-    return synchronized(FONT_CACHE) {
-        !FONT_CACHE.containsKey(assetPath).apply {
-            try {
-                val typeface = Typeface.createFromAsset(ctx.assets, assetPath)
-                FONT_CACHE[assetPath] = typeface
-            } catch (e: Exception) {
-                Log.e(TAG, "Could not get typeface $assetPath because ${e.message}")
-                return null
-            }
+internal fun get(ctx: Context, assetPath: String): Typeface? = synchronized(FONT_CACHE) {
+    !FONT_CACHE.containsKey(assetPath).apply {
+        try {
+            val typeface = Typeface.createFromAsset(ctx.assets, assetPath)
+            FONT_CACHE[assetPath] = typeface
+        } catch (e: Exception) {
+            Log.e(TAG, "Could not get typeface $assetPath because ${e.message}")
         }
-        FONT_CACHE[assetPath]
     }
+    FONT_CACHE[assetPath]
 }

@@ -20,11 +20,6 @@ import kotlinx.android.synthetic.main.item_main.view.*
 
 class SecondActivity : AppCompatActivity(), OnItemClickListener {
 
-    companion object {
-        private const val TOOLTIP_ID = 101
-        private const val LIST_POSITION = 5
-    }
-
     private lateinit var displayMetrics: DisplayMetrics
 
     private var tooltipView: Tooltip.TooltipView? = null
@@ -60,7 +55,7 @@ class SecondActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        if (position == SecondActivity.LIST_POSITION) {
+        if (position == 5) {
             if (null != tooltipView) {
                 tooltipView?.hide()
                 tooltipView = null
@@ -92,7 +87,7 @@ class SecondActivity : AppCompatActivity(), OnItemClickListener {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.itemView.item_text.apply { text = data[position] }
-            if (position == SecondActivity.LIST_POSITION) {
+            if (position == 5) {
                 showTooltip(holder)
             }
         }
@@ -101,7 +96,7 @@ class SecondActivity : AppCompatActivity(), OnItemClickListener {
         override fun getItemCount(): Int = data.size
 
         private fun showTooltip(holder: ViewHolder) {
-            tooltipView = Tooltip.make(this@SecondActivity, Tooltip.Builder(SecondActivity.TOOLTIP_ID)
+            tooltipView = Tooltip.make(this@SecondActivity, Tooltip.Builder(101)
                                  .maxWidth((displayMetrics.widthPixels / 2))
                                  .anchor(holder.itemView.item_text, Tooltip.Gravity.RIGHT)
                                  .closePolicy(Tooltip.ClosePolicy.TOUCH_INSIDE_NO_CONSUME, 0)

@@ -8,7 +8,6 @@ import android.graphics.Rect
 import android.util.Log
 
 internal fun getActivity(ctx: Context?): Activity? = when (ctx) {
-    null -> null
     is Activity -> ctx
     is ContextWrapper -> getActivity(ctx.baseContext)
     else -> null

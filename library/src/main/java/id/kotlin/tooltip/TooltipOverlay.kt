@@ -15,8 +15,8 @@ class TooltipOverlay @JvmOverloads constructor(context: Context,
         val drawable = TooltipOverlayDrawable(context, defStyleResId)
         setImageDrawable(drawable)
 
-        val typedArray = context.theme.obtainStyledAttributes(defStyleResId, R.styleable.TooltipOverlay)
-        layoutMargins = typedArray.getDimensionPixelSize(R.styleable.TooltipOverlay_android_layout_margin, 0)
-        typedArray.recycle()
+        val theme = context.theme.obtainStyledAttributes(defStyleResId, R.styleable.TooltipOverlay)
+        layoutMargins = theme.getDimensionPixelSize(R.styleable.TooltipOverlay_android_layout_margin, 0)
+        theme.recycle()
     }
 }
